@@ -2,11 +2,11 @@
 **OceanSafe** is an integrated safety dashboard designed to predict shark attack risks and provide real-time lifeguard advice for beachgoers. It combines historical data analysis with generative AI to offer a modern approach to marine safety.
 
 ## Key Features:
-* ** Hybrid AI Analysis:** Uses a Random Forest model for statistical risk prediction with SHAP confidentiality and Google Gemini (LLM) for context-aware safety advice
-* ** Visual Risk Gauge:** Interactive dashboard featuring a speedometer-style risk probability  gauge.
-* ** Live Shark Radar (Simulated):** A geospatial visualisation tool demonstrating how real-time tracking data appears for lifeguards.
-* ** Crowdsourced Sighting Reports:** Allows users to log sightings, demonstrating community-driven safety data collection.
-* ** Environmental Monitoring:** Integrates live weather data (Wind Speed, Temperature) via the Open-Meteo API
+* **Hybrid AI Analysis:** Uses a Random Forest model for statistical risk prediction with SHAP confidentiality and Google Gemini (LLM) for context-aware safety advice
+* **Visual Risk Gauge:** Interactive dashboard featuring a speedometer-style risk probability  gauge.
+* **Live Shark Radar (Simulated):** A geospatial visualisation tool demonstrating how real-time tracking data appears for lifeguards.
+* **Crowdsourced Sighting Reports:** Allows users to log sightings, demonstrating community-driven safety data collection.
+* **Environmental Monitoring:** Integrates live weather data (Wind Speed, Temperature) via the Open-Meteo API
 
 ## Technology Stack
 * **Frontend:** Streamlit (Python)

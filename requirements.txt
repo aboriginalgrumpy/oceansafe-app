@@ -5,6 +5,6 @@ scikit-learn
 joblib
 requests
 google-generativeai
-imbalanced-learn
+plotly
 shap
 matplotlib

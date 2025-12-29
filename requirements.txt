@@ -6,3 +6,5 @@ joblib
 requests
 google-generativeai
 imbalanced-learn
+shap
+matplotlib

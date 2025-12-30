@@ -116,6 +116,18 @@ BEACH_DB = {
     "Mabul Island (Malaysia)": {"country": "MALAYSIA", "lat": 4.2464, "lon": 118.6311},
     "Damai Beach (Malaysia)": {"country": "MALAYSIA", "lat": 1.7480, "lon": 110.3160},
     "Tusan Beach (Malaysia)": {"country": "MALAYSIA", "lat": 4.1350, "lon": 113.8200},
+
+    # --- PHILIPPINES ---
+    "Bagasbas Beach (Philippines)": {"country": "PHILIPPINES", "lat": 14.1358, "lon": 122.9836},
+    "Nacpan Beach (Philippines)": {"country": "PHILIPPINES", "lat": 11.3200, "lon": 119.4300},
+    "Sabang Beach (Philippines)": {"country": "PHILIPPINES", "lat": 13.5200, "lon": 120.9700},
+    "White Beach, Puerto Galera (Philippines)": {"country": "PHILIPPINES", "lat": 13.5000, "lon": 120.9000},
+    "Subic Beach, Sorsogon (Philippines)": {"country": "PHILIPPINES", "lat": 12.5300, "lon": 124.1000},
+    "White Beach, Boracay (Philippines)": {"country": "PHILIPPINES", "lat": 11.9500, "lon": 121.9300},
+    "Alona Beach, Bohol (Philippines)": {"country": "PHILIPPINES", "lat": 9.5500, "lon": 123.7700},
+    "Mactan Island (Philippines)": {"country": "PHILIPPINES", "lat": 10.3100, "lon": 124.0200},
+    "Cloud 9, Siargao (Philippines)": {"country": "PHILIPPINES", "lat": 9.8000, "lon": 126.1600},
+    "Samal Island (Philippines)": {"country": "PHILIPPINES", "lat": 7.0800, "lon": 125.7500},
 }
 
 # 2. HELPER FUNCTIONS
@@ -479,4 +491,5 @@ with st.expander(f"🔴 OPEN LIVE SHARK RADAR: {beach}", expanded=False):
             'lon': [loc_data['lon']] + shark_df['lon'].tolist(),
             'color': ['#0000FF'] + ['#FF0000'] * len(shark_df)
         })
+
         st.map(map_data, color='color', size=20)

@@ -9,4 +9,3 @@ Pillow
 plotly
 shap
 matplotlib
-base64

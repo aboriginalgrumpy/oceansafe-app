@@ -413,7 +413,7 @@ if submitted:
             # 1. Encode inputs
             country_val = encoders['Country'].transform([b_info['country']])[0]
             act_val = encoders['Activity'].transform([act])[0]
-            season_val = encoders['Season'].transform([model.season])[0]
+            season_val = encoders['Season'].transform([model_season])[0]
             age_val = encoders['AgeGroup'].transform([age])[0]
             sex_val = 1 if sex == 'Male' else 0
             
@@ -709,4 +709,5 @@ with st.expander("📝 Report a Sighting / Scan Egg Case"):
 # --- DISPLAY RECENT ALERTS (Optional: Shows list below the form) ---
 if 'reports' in st.session_state and len(st.session_state['reports']) > 0:
     st.markdown("##### Recent Alerts:")
+
     st.dataframe(st.session_state['reports'], use_container_width=True)

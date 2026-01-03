@@ -390,7 +390,7 @@ st.info(f"📍 Context: **{season_str}** detected for {country} in Month {month}
 
 c1, c2 = st.columns(2)
 with c1:
-    age = st.selectbox("AgeGroup", ["10-20", "20-30", "30-40", "40-50", "50+"])
+    age = st.selectbox("AgeGroup", ["Child", "Teen", "Young Adult", "Adult", "Elderly"])
 with c2:
     sex = st.radio("Gender", ["Male", "Female"], horizontal=True)
 submitted = st.button("Run AI Risk Analysis", type="primary", use_container_width=True)
@@ -717,4 +717,5 @@ if 'reports' in st.session_state and len(st.session_state['reports']) > 0:
     st.markdown("##### Recent Alerts:")
 
     st.dataframe(st.session_state['reports'], use_container_width=True)
+
 

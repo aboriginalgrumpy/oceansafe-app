@@ -387,6 +387,12 @@ season_str = get_climate_season(country, month)
 
 # Display the detected season nicely
 st.info(f"📍 Context: **{season_str}** detected for {country} in Month {month}.")
+
+c1, c2 = st.columns(2)
+with c1:
+    age = st.selectbox("AgeGroup", ["10-20", "20-30", "30-40", "40-50", "50+"])
+with c2:
+    sex = st.radio("Gender", ["Male", "Female"], horizontal=True)
 submitted = st.button("Run AI Risk Analysis", type="primary", use_container_width=True)
 
 # 5. ANALYSIS & RESULTS (SMART LOGIC UPDATE)
@@ -711,3 +717,4 @@ if 'reports' in st.session_state and len(st.session_state['reports']) > 0:
     st.markdown("##### Recent Alerts:")
 
     st.dataframe(st.session_state['reports'], use_container_width=True)
+

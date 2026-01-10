@@ -291,6 +291,7 @@ def generate_llm_advice(risk_level, shark_prob, activity, weather_data):
         Task: Write a 3-bullet safety briefing.
         IMPORTANT: If Risk Status mentions "WEATHER", focus on drowning/storms, not sharks.
         Keep it concise.
+        You are a coastal safety expert. Strictly use the Metric System for all measurements.
         """
         response = llm.generate_content(prompt)
         return response.text
@@ -716,6 +717,7 @@ if 'reports' in st.session_state and len(st.session_state['reports']) > 0:
     st.markdown("##### Recent Alerts:")
 
     st.dataframe(st.session_state['reports'], use_container_width=True)
+
 
 
 

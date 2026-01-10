@@ -192,7 +192,7 @@ BEACH_DB = {
 
 # 2. HELPER FUNCTIONS
 
-# --- SHARK RADAR SIMULATION ---
+# --- SHARK RADAR SIMULATION --- /this is just synthetic since we need data from OCEARH
 def get_live_shark_activity(center_lat, center_lon):
     """Generates simulated shark 'pings' near the selected beach."""
     shark_data = []
@@ -212,7 +212,7 @@ def get_live_shark_activity(center_lat, center_lon):
         shark_data.append(shark)
     return pd.DataFrame(shark_data)
 
-# --- WEATHER API ---
+# --- WEATHER API --- /api from open-meteo live
 def get_live_weather(lat, lon):
     url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
     try:
@@ -230,7 +230,7 @@ def interpret_weather_code(code):
     elif code <95: return "Heavy Rain"
     else: return "Thunderstorm"
 
-# --- SEASON CALCULATOR ---
+# --- SEASON CALCULATOR --- /this is where the difference in hemisphere for season
 def determine_season(date_obj, country_name):
     month = date_obj.month
     clean_country = str(country_name).strip().upper()
@@ -325,7 +325,7 @@ if 'reports' in st.session_state and len(st.session_state['reports']) > 0:
     df_reports = pd.DataFrame(st.session_state['reports'])
     st.sidebar.dataframe(df_reports, hide_index=True)
 
-# --- HEADER SECTION ---
+# --- HEADER SECTION --- /used the base64 to convert image into text to be able to insert my logo
 import base64
 from pathlib import Path
 
@@ -352,7 +352,7 @@ if model is None:
     st.error("⚠️ Model files not found. Please upload .pkl files.")
     st.stop()
 
-# 1. Select Country (Type to Search works automatically!)
+# 1. Select Country 
 all_countries = sorted(list(set(d['country'] for d in BEACH_DB.values())))
 country = st.selectbox("Select Country", all_countries)
 
@@ -694,7 +694,6 @@ with st.expander("📝 Report a Sighting / Scan Egg Case"):
                         image = Image.open(uploaded_egg)
                         
                         # 2. Configure Model (Use the standard Flash model)
-                        # The update you just did makes this work!
                         vision_model = genai.GenerativeModel('gemini-2.5-flash')
                         
                         # 3. Ask Question
@@ -717,5 +716,6 @@ if 'reports' in st.session_state and len(st.session_state['reports']) > 0:
     st.markdown("##### Recent Alerts:")
 
     st.dataframe(st.session_state['reports'], use_container_width=True)
+
 
 
